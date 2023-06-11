@@ -1,36 +1,65 @@
-import Com from "./Com";
-import {
-  AppBottom,
-  AppContainer,
-  AppInput,
-  Box1,
-  Box2,
-  Box3,
-  Box4,
-} from "./style/style";
+import { useContext, useState } from "react";
+import { CartContextAPI } from "./context/CartContext";
+
+const simple = ["a", "b", "c"];
+const capital = ["A", "B", "C"];
+const symbol = ["@", "#"];
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 const App = () => {
-  return (
-    <AppContainer>
-      <h1>Amila</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
-      <AppBottom>button</AppBottom>
+  // const [error, setError] = useState("");
 
-      <Com>
-        <Box1></Box1>
-        <Box2></Box2>
-        <Box3></Box3>
-        <Box4></Box4>
-      </Com>
-    </AppContainer>
+  const { cart, setCart } = useContext(CartContextAPI);
+
+  // const handlePassword = (e) => {
+  //   e.preventDefault();
+
+  //   let s = false;
+  //   let c = false;
+  //   let sy = false;
+  //   let n = false;
+
+  //   const editStr = String(e.target.value).split("");
+  //   console.log(editStr);
+  //   simple.forEach((ele) => {
+  //     editStr.forEach((i_ele) => {
+  //       if (ele == i_ele) {
+  //         s = true;
+  //       }
+  //     });
+  //   });
+  //   capital.forEach((ele) => {
+  //     editStr.forEach((i_ele) => {
+  //       if (ele == i_ele) {
+  //         c = true;
+  //       }
+  //     });
+  //   });
+  //   symbol.forEach((ele) => {
+  //     editStr.forEach((i_ele) => {
+  //       if (ele == i_ele) {
+  //         sy = true;
+  //       }
+  //     });
+  //   });
+  //   number.forEach((ele) => {
+  //     editStr.forEach((i_ele) => {
+  //       if (ele == i_ele) {
+  //         n = true;
+  //       }
+  //     });
+  //   });
+
+  //   console.log(s, c, sy, n);
+  // };
+
+  return (
+    <div>
+      {/* <input type="password" onChange={handlePassword} /> */}
+      <h1>Amila</h1>
+      <h3>{cart}</h3>
+      <button onClick={() => setCart((pre) => ++pre)}>click</button>
+    </div>
   );
 };
 
