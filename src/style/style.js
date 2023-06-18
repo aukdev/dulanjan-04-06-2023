@@ -51,3 +51,10 @@ export const Box3 = styled(Box)`
 export const Box4 = styled(Box)`
   height: 35vh;
 `;
+
+export const MyForm = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
